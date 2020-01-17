@@ -1,0 +1,32 @@
+export class UserModel {
+    login: string = null;
+    id: number = null;
+    avatar_url: string = null;
+    gravatar_id: string = null;
+    url: string = null;
+    html_url: string = null;
+    followers_url: string = null;
+    following_url: string = null;
+    gists_url: string = null;
+    starred_url: string = null;
+    subscriptions_url: string = null;
+    organizations_url: string = null;
+    repos_url: string = null;
+    events_url: string = null;
+    received_events_url: string = null;
+    type: string = null;
+    site_admin: string = null;
+    name: string = null;
+    company: string = null;
+    blog: string = null;
+    location: string = null;
+    email: string = null;
+    hireable: string = null;
+    bio: string = null;
+    public_repos: string = null;
+    public_gists: string = null;
+    followers: string = null;
+    following: string = null;
+    created_at: string = null;
+    updated_at: string = null;
+}

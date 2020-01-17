@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+
+<h3 class="text-center mt-4">Usuário</h3>
+
+<form [formGroup]="userForm">
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-2">
+                        <fieldset class="form-group">
+                            <label>ID</label>
+                            <input type="text" formControlName="id" class="form-control" placeholder="Id">
+                        </fieldset>
+                    </div>
+
+                    <div class="col-3">
+                        <fieldset class="form-group">
+                            <label>Login</label>
+                            <input type="text" formControlName="login" class="form-control" placeholder="Login">
+                        </fieldset>
+                    </div>
+                    <div class="col-5">
+                        <label>URL</label>
+                        <fieldset class="form-group">
+                            <input type="text" formControlName="url" class="form-control">
+                        </fieldset>
+                    </div>
+                    <div class="col-2">
+                        <fieldset class="form-group">
+                            <label>Data de criação</label>
+                            <input type="text" formControlName="created_at" class="form-control"
+                                [value]="this.userForm.get('created_at')!.value | date: 'dd/MM/yyyy'">
+                        </fieldset>
+                    </div>
+                </div>
+
+                <h3 class="text-center mt-4">Repositórios públicos do usuário</h3>
+                <!-- Tabela com os repositórios -->
+                <table class="table table-dark cursor-pointer table-hover mb-4">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">URL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let repo of repos; let i = index">
+                            <th>{{ i+1 }}</th>
+                            <td>{{ repo.id }}</td>
+                            <td>{{ repo.name }}</td>
+                            <td>{{ repo.url }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Final da tabela -->
+            </div>
+        </div>
+    </div>
+</form>
+
+<app-footer></app-footer>
